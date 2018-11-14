@@ -15,9 +15,9 @@ namespace Contoso.Forms.Demo
     {
         const string LogTag = "AppCenterXamarinDemo";
 
-        const string uwpKey = "5bce20c8-f00b-49ca-8580-7a49d5705d4c";
-        const string androidKey = "987b5941-4fac-4968-933e-98a7ff29237c";
-        const string iosKey = "fe2bf05d-f4f9-48a6-83d9-ea8033fbb644";
+        const string uwpKey = "d8b541ff-5750-4eff-8757-585fe03ce869";
+        const string androidKey = "fb478830-c400-4c77-8423-55ced3d52577";
+        const string iosKey = "1537f8da-8062-487e-833d-f436d8125a76";
 
         public App()
         {
@@ -29,6 +29,9 @@ namespace Contoso.Forms.Demo
         {
             if (!AppCenter.Configured)
             {
+                AppCenter.SetLogUrl("https://in-integration.dev.avalanch.es");
+                Distribute.SetInstallUrl("https://install.asgard-int.trafficmanager.net");
+                Distribute.SetApiUrl("https://appcenter-int.trafficmanager.net/api/v0.1");
                 AppCenter.LogLevel = LogLevel.Verbose;
                 Crashes.SendingErrorReport += SendingErrorReportHandler;
                 Crashes.SendingErrorReport += SendingErrorReportHandler;
